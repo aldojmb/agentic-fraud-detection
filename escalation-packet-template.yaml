@@ -1,0 +1,58 @@
+# Escalation Packet Template
+# Standard format for fraud agent → human reviewer handoff
+# Complete one block per escalation event
+
+case_id: FRD-[YYYY]-[XXXXXX]
+created_at: YYYY-MM-DDTHH:MM:SS.mmmZ
+sla_expires_at: YYYY-MM-DDTHH:MM:SS.mmmZ     # Time by which human must act
+triggered_by: "[Pattern ID] — [Pattern Name]"
+
+account_id: "[anonymized]"
+session_id: "[anonymized]"
+channel: mobile_app | web | branch | api
+
+risk_score: 0                                  # 0–100
+confidence: low | moderate | high | critical
+recommended_action: approve | add_friction | hold_and_step_up | block | freeze_account
+
+signal_summary:
+  - signal: ""
+    weight: 0.00
+    value: ""
+    anomaly: ""
+  - signal: ""
+    weight: 0.00
+    value: ""
+    anomaly: ""
+
+attack_stage: ""                               # For ATO: Stage 1–5. For transactional: N/A
+
+narrative: >
+  2–4 sentence plain-language summary of why this case was escalated.
+  What signals are present, what pattern they suggest, and what the
+  recommended action is. Written for a fraud analyst, not an engineer.
+
+customer_impact:
+  if_blocked: low | medium | high
+  if_approved: low | medium | high
+  notes: ""
+
+transaction_details:                           # If applicable
+  amount: 0.00
+  currency: USD
+  destination: ""
+  rail: ACH | RTP | FedNow | Zelle | Wire | Card
+  irreversible: true | false
+
+regulatory_flags:
+  sar_threshold_met: true | false
+  regulation_e_applies: true | false
+  aml_indicator: true | false
+
+reviewer:
+  assigned_to: ""
+  assigned_at: null
+  decision: null                               # confirmed_fraud | false_positive | inconclusive
+  decision_at: null
+  decision_notes: ""
+  action_taken: ""
