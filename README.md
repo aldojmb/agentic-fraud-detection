@@ -49,8 +49,6 @@ This repo documents the architecture patterns that make that possible.
 └─────────────────────────────────────────────────────────────────┘
 ```
 
-![Fraud Detection Architecture](fraud-detection-flow.png)
-
 ---
 
 ## Part 1 — Detection Layer Patterns
