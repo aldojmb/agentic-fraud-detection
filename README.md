@@ -48,6 +48,8 @@ This repo documents the architecture patterns that make that possible.
 │   Intervention · Communication · Recovery · Audit Trail         │
 └─────────────────────────────────────────────────────────────────┘
 ```
+![Fraud Detection Architecture](fraud-detection-flow.png)
+
 
 ---
 
